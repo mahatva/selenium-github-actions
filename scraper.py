@@ -50,10 +50,11 @@ for x in range(2):
     time.sleep(2)
     WebDriverWait(driver, 5).until(
         EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Login')]"))).click()
+    time.sleep(5)
     try:
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located(
-                (By.XPATH, "//button[@class='goto-btn btn btn-success text-nowrap btn-pill']")))
+                (By.XPATH, "//i[@class= 'material-icons-outlined tx-18 align-middle ml-1']")))
         base_url = "https://api.telegram.org/bot6224935224:AAGODWW5hvh0kfFTMlz-MVGquEMtQX26LVY/sendMessage?chat_id=-982268246&text=DoneFlatrade" + str(
             arr[x][0])
         driver.get(base_url)
