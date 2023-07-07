@@ -27,7 +27,7 @@ options = [
 for option in options:
     chrome_options.add_argument(option)
 
-arr =[["FT020601","Apple@123",'XK3U43T7MJW7H62T6443AX7BHM5B3IK3'], ["FT022272","Flat-22272",'WKK336STJDPV7I2735CN32475N24TX5K']]
+arr =[["FT020601","Apple@123",'30102002'], ["FT022272","Flat-22272",'31071993']]
 
 for x in range(2):
     driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
@@ -44,9 +44,9 @@ for x in range(2):
 
     WebDriverWait(driver, 500).until(
         EC.presence_of_element_located((By.XPATH, "//input[@id='pwd']"))).send_keys(arr[x][1])
-    totp = pyotp.TOTP(arr[x][2])
+    totp = arr[x][2]
     WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.XPATH, "//input[@id='pan']"))).send_keys(totp.now())
+        EC.presence_of_element_located((By.XPATH, "//input[@id='pan']"))).send_keys(totp)
     time.sleep(2)
     WebDriverWait(driver, 5).until(
         EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Login')]"))).click()
