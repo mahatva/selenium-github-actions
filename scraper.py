@@ -52,7 +52,7 @@ for x in range(2):
         EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Login')]"))).click()
     time.sleep(5)
     try:
-        WebDriverWait(driver, 10).until(
+        WebDriverWait(driver, 100).until(
             EC.presence_of_element_located(
                 (By.XPATH, "//i[@class= 'material-icons-outlined tx-18 align-middle ml-1']")))
         base_url = "https://api.telegram.org/bot6224935224:AAGODWW5hvh0kfFTMlz-MVGquEMtQX26LVY/sendMessage?chat_id=-982268246&text=DoneFlatrade" + str(
