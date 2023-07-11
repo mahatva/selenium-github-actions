@@ -54,7 +54,7 @@ for x in range(2):
     try:
         WebDriverWait(driver, 100).until(
             EC.presence_of_element_located(
-                (By.XPATH, "//i[@class= 'material-icons-outlined tx-18 align-middle ml-1']")))
+                (By.XPATH, "//body/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[2]")))
         base_url = "https://api.telegram.org/bot6224935224:AAGODWW5hvh0kfFTMlz-MVGquEMtQX26LVY/sendMessage?chat_id=-982268246&text=DoneFlatrade" + str(
             arr[x][0])
         driver.get(base_url)
